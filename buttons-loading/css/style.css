@@ -1,0 +1,8 @@
+#home {
+    margin: 3em;
+}
+
+.button.checking span {
+    background: url("../ajax-loader.gif") no-repeat scroll 0 3px transparent;
+    padding-left: 24px;
+}

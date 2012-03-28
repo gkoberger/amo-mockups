@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AMO Buttons -- Find Latest Version!</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/buttons.less.css" />
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="home">
+
+    <div>
+      <h1>Normal button</h1>
+      <button class="button prominent" id="b1"><span>Download Now</span></button>
+    </div>
+
+    <div>
+      <h1>Older compatible version found</h1>
+      <button class="button prominent" id="b2"><span>Download Now</span></button>
+    </div>
+
+    <div>
+      <h1>No compatible versions</h1>
+      <button class="button prominent" id="b3"><span>Download Now</span></button>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+      $(function() {
+        setTimeout(function() {
+          $('#b1').addClass('add').find('span').text('Add to Firefox');
+
+          $('#b2, #b3').addClass('disabled checking').find('span').text('Checking Versions...');
+
+          setTimeout(function() {
+            $('#b2').removeClass('disabled').addClass('add').find('span').text('Add to Firefox');
+            $('#b3').addClass('add').find('span').text('Add to Firefox');
+          }, 500);
+        }, 300);
+      });
+    </script>
+  </body>
+</html>
